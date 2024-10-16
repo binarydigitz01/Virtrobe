@@ -4,6 +4,7 @@ import path from 'path';
 import helmet from 'helmet';
 import express, { Request, Response, NextFunction } from 'express';
 import logger from 'jet-logger';
+import './repos/SqlRepo'
 
 import 'express-async-errors';
 
@@ -63,17 +64,17 @@ app.set('views', viewsDir);
 
 // Set static directory (js and css).
 const staticDir = path.join(__dirname, 'public');
-app.use(express.static(staticDir));
+app.use('/',express.static(staticDir));
 
 // Nav to users pg by default
-app.get('/', (_: Request, res: Response) => {
-  return res.redirect('/users');
-});
+// app.get('/', (_: Request, res: Response) => {
+//   return res.redirect('/users');
+// });
 
 // Redirect to login if not logged in.
-app.get('/users', (_: Request, res: Response) => {
-  return res.sendFile('users.html', { root: viewsDir });
-});
+// app.get('/users', (_: Request, res: Response) => {
+//   return res.sendFile('users.html', { root: viewsDir });
+// });
 
 
 // **** Export default **** //

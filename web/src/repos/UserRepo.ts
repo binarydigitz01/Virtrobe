@@ -21,7 +21,7 @@ async function getOne(email: string): Promise<IUser | null> {
 /**
  * See if a user with the given id exists.
  */
-async function persists(id: number): Promise<boolean> {
+async function persists(id: string): Promise<boolean> {
   const db = await orm.openDb();
   for (const user of db.users) {
     if (user.id === id) {
