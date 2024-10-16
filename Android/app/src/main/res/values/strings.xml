@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VirtRobe</string>
+    <string name="title_activity_account">AccountActivity</string>
+    <string name="tab_text_1">Register</string>
+    <string name="tab_text_2">Log In</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -3,17 +3,25 @@ import moment from 'moment';
 
 // **** Variables **** //
 
-const INVALID_CONSTRUCTOR_PARAM = 'nameOrObj arg must a string or an object ' + 
+const INVALID_CONSTRUCTOR_PARAM = 'nameOrObj arg must a string or an object ' +
   'with the appropriate user keys.';
 
 
 // **** Types **** //
+export enum Gender{
+  MALE,
+  FEMALE
+}
 
 export interface IUser {
-  id: number;
-  name: string;
+  // id: number;
+  // name: string;
+  // email: string;
+  // created: Date;
+  id: string;
+  username: string;
   email: string;
-  created: Date;
+  gender: Gender;
 }
 
 
@@ -23,16 +31,16 @@ export interface IUser {
  * Create new User.
  */
 function new_(
-  name?: string,
+  id?: string,
+  username?: string,
   email?: string,
-  created?: Date,
-  id?: number, // id last cause usually set by db
+  gender?: Gender, // id last cause usually set by db
 ): IUser {
   return {
-    id: (id ?? -1),
-    name: (name ?? ''),
+    id: (id ?? ''),
+    username: (username ?? ''),
     email: (email ?? ''),
-    created: (created ? new Date(created) : new Date()),
+    gender: (gender ? Gender.FEMALE)
   };
 }
 
@@ -53,10 +61,9 @@ function isUser(arg: unknown): arg is IUser {
   return (
     !!arg &&
     typeof arg === 'object' &&
-    'id' in arg && typeof arg.id === 'number' && 
-    'email' in arg && typeof arg.email === 'string' && 
-    'name' in arg && typeof arg.name === 'string' &&
-    'created' in arg && moment(arg.created as string | Date).isValid()
+    'id' in arg && typeof arg.id === 'string' &&
+    'email' in arg && typeof arg.email === 'string' &&
+    'username' in arg && typeof arg.username === 'string'
   );
 }
 
