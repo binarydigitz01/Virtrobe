@@ -7,6 +7,10 @@ in pkgs.mkShell {
       fuzzywuzzy
       google-generativeai
       pillow
+      cvzone
+      mediapipe
+      numpy
+      opencv
     ]))
   ];
 }

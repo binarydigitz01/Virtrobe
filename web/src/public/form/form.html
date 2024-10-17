@@ -22,7 +22,7 @@
         <div id="__next">
             <div class="page-reveal">
                 <div class="page-reveal__background">
-                    
+
                 </div>
             </div>
             <div class="page page-contact" style="overflow-y:auto;height:auto">
@@ -30,14 +30,14 @@
                 <div class="page-contact__form-container">
                     <h1 class="page-contact__heading">
                         <span class="word">IV.</span>
-                        <span class="word">LOGIN</span>
+                        <span class="word">REGISTER</span>
                     </h1>
                     <form class="form page-contact__form" id="form-contact">
                         <label class="form__input" for="name">
                             <input type="text" class="form__input-input" id="name" name="name" required />
                             <div class="form__input-label">Name</div>
                         </label>
-                        
+
                         <label class="form__input" for="email">
                             <input type="email" class="form__input-input" id="email" name="email" required />
                             <div class="form__input-label">Email</div>
@@ -50,7 +50,7 @@
                             </select>
                             <div class="form__input-label">Are you specially abled?</div>
                         </label>
-                            
+
                             <label class="form__input" for="gender">
                                 <select class="form__input-input" id="gender" name="gender" onchange="showBodyOptions()">
                                     <option value="" disabled selected>Select Gender</option>
@@ -59,7 +59,7 @@
                                 </select>
                                 <div class="form__input-label">Gender</div>
                             </label>
-                            
+
                             <!-- Body Type Options for Male -->
                             <div id="maleBodyOptions" style="display:none;">
                                 <div class="form__input-label">Select your preferred body shape (Male):</div>
@@ -76,7 +76,7 @@
                                     <img src="avatar_male_fat.png" alt="Male Body Type 3" class="body-img">
                                 </label>
                             </div>
-                            
+
                             <!-- Body Type Options for Female -->
                             <div id="femaleBodyOptions" style="display:none;">
                                 <div class="form__input-label">Select your preferred body shape (Female):</div>
@@ -93,15 +93,15 @@
                                     <img src="avatar_female_fat.png" alt="Female Body Type 3" class="body-img">
                                 </label>
                             </div>
-                            
+
                             <script>
                                 function showBodyOptions() {
                                     var gender = document.getElementById("gender").value;
-                                    
+
                                     // Hide both male and female body type options by default
                                     document.getElementById("maleBodyOptions").style.display = "none";
                                     document.getElementById("femaleBodyOptions").style.display = "none";
-                                    
+
                                     // Show body type options based on the selected gender
                                     if (gender === "male") {
                                         document.getElementById("maleBodyOptions").style.display = "block";
@@ -110,7 +110,7 @@
                                     }
                                 }
                             </script>
-                               
+
 
                         <button class="button form__submit" type="submit" form="form-contact">
                             <div class="form__submit-label">Submit</div>
@@ -126,7 +126,7 @@
                             <a class="ir footer__logo" href="/">
                                 VirtRobe
                                 <div class="logo footer__logo-img">
-                
+
                                 </div>
                             </a>
                         </div>
@@ -254,6 +254,6 @@
                     </div>
                 </button>
             </header>
-        </div>       
+        </div>
     </body>
 </html>
