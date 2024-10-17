@@ -3677,3 +3677,8 @@ html {
         font-size: 9.375rem;
     }
 }
+
+.logo_container{
+    display:flex;
+    justify-content: center;
+}

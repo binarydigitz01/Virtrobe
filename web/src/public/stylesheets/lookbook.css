@@ -6,7 +6,7 @@
     padding: 8px;;
     border-radius:15px;
     margin-bottom:10px;
-    
+
 }
 
 #name{
@@ -68,7 +68,7 @@
   .menumeta{
     display: flex;
 
-    justify-content:space-around; 
+    justify-content:space-around;
     align-items: center;
 
     position: relative;
@@ -95,10 +95,10 @@
     font-family: "Concert One", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 25px;  
+    font-size: 25px;
     margin:1px;
     padding:2px;
-    
+
     /* decoration */
     border:2px solid black;
     border-radius:15px;
@@ -119,7 +119,7 @@
     justify-content: space-around;
 
     margin-bottom:5px;
-   
+
   }
 
   /* image pop */
@@ -190,7 +190,7 @@
             display: inline;
             font-weight: 400;
             font-style: normal;
-            font-size: 50px;  
+            font-size: 50px;
             text-align: start;
         }
 
@@ -204,7 +204,7 @@
             top:51.5%;
        }
 
-       
+
        h1::before {
             position: absolute;
             content: "";
@@ -215,7 +215,7 @@
             top:51.5%;
        }
 
-      
+
         .popularmain{
             display: flex;
             flex-wrap:wrap;
@@ -224,7 +224,7 @@
             height:100%;
             border-radius:15px;
         }
-      
+
 
         /* main contain */
         .food{
@@ -238,17 +238,17 @@
             animation-name:recipes;
             animation-duration:2s;
             animation-delay:0s;
-            
+
         }
 
         .food:hover{
-           transform: scale(1.5);
+           transform: scale(1.25);
            border-radius:15px;
         }
 
 
         .recipe{
-            
+
             width:25%;
             height:auto;
 
@@ -259,12 +259,12 @@
             margin: 15px;
 
             border-radius:15px;
-        }  
+        }
 
         .recipe:hover{
               /* box-shadow:7px 7px rgb(6, 136, 6); */
               transform: scale(1.02);
-        }  
+        }
 
         .writing{
             border: 2px solid black;
@@ -272,7 +272,6 @@
             flex-direction: column;
             justify-content: space-evenly;
             height: 30px;
-            width:60%;
 
             margin:15px;
             border-radius:0px;
@@ -282,8 +281,8 @@
             animation-duration:2s;
             animation-delay:0s;
         }
-        
-        
+
+
         .writing:hover{
            box-shadow: 7px 7px rgb(228, 107, 148);
         }
@@ -322,8 +321,8 @@
             border-radius:15px;
             width: fit-content;
             display: block;
-        
-            padding:10px;  
+
+            padding:10px;
 
             align-self: center;
 

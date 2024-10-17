@@ -4,7 +4,6 @@ import path from 'path';
 import helmet from 'helmet';
 import express, { Request, Response, NextFunction } from 'express';
 import logger from 'jet-logger';
-import './repos/SqlRepo'
 
 import 'express-async-errors';
 
@@ -15,7 +14,8 @@ import EnvVars from '@src/common/EnvVars';
 import HttpStatusCodes from '@src/common/HttpStatusCodes';
 import { RouteError } from '@src/common/classes';
 import { NodeEnvs } from '@src/common/misc';
-
+import { engine } from 'express-handlebars';
+import mustacheRouter from './routes/mustacheRouter';
 
 // **** Variables **** //
 
@@ -28,6 +28,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cookieParser(EnvVars.CookieProps.Secret));
+app.use
 
 // Show routes called in console during development
 if (EnvVars.NodeEnv === NodeEnvs.Dev.valueOf()) {
@@ -41,6 +42,7 @@ if (EnvVars.NodeEnv === NodeEnvs.Production.valueOf()) {
 
 // Add APIs, must be after middleware
 app.use(Paths.Base, BaseRouter);
+app.use("/", mustacheRouter);
 
 // Add error handler
 app.use((err: Error, _: Request, res: Response, next: NextFunction) => {
@@ -61,6 +63,8 @@ app.use((err: Error, _: Request, res: Response, next: NextFunction) => {
 // Set views directory (html)
 const viewsDir = path.join(__dirname, 'views');
 app.set('views', viewsDir);
+app.engine("handlebars",engine());
+app.set("view engine", "handlebars");
 
 // Set static directory (js and css).
 const staticDir = path.join(__dirname, 'public');

@@ -16,33 +16,31 @@
         <link rel="dns-prefetch" href="https://www.google-analytics.com"/>
         <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="true"/>
         <title>Contact</title>
-        <link rel="stylesheet" href="/stylesheets/aboutus.css">
+        <link rel="stylesheet" href="/already.css">
     </head>
     <body>
         <div id="__next">
             <div class="page-reveal">
                 <div class="page-reveal__background">
-
+                    
                 </div>
             </div>
             <div class="page page-contact" style="overflow-y:auto;height:auto">
+                <h2 class="page-contact__subtitle"></h2>
                 <div class="page-contact__form-container">
                     <h1 class="page-contact__heading">
-                        <span class="word">IV. </span>
-                        <span class="word">Say hello</span>
+                        <span class="word">IV.</span>
+                        <span class="word">LOGIN</span>
                     </h1>
                     <form class="form page-contact__form" id="form-contact">
                         <label class="form__input" for="name">
-                            <input type="text" class="form__input-input" id="name" name="name"/>
+                            <input type="text" class="form__input-input" id="name" name="name" required />
                             <div class="form__input-label">Name</div>
                         </label>
+                        
                         <label class="form__input" for="email">
-                            <input type="email" class="form__input-input" id="email" name="email"/>
-                            <div class="form__input-label">Email</div>
-                        </label>
-                        <label class="form__input" for="message">
-                            <textarea class="form__input-input" id="message" name="message"></textarea>
-                            <div class="form__input-label">What &#x27;s on your mind</div>
+                            <input type="password" class="form__input-input" id="email" name="email" required />
+                            <div class="form__input-label">password</div>
                         </label>
                         <button class="button form__submit" type="submit" form="form-contact">
                             <div class="form__submit-label">Submit</div>
@@ -58,7 +56,7 @@
                             <a class="ir footer__logo" href="/">
                                 VirtRobe
                                 <div class="logo footer__logo-img">
-
+                
                                 </div>
                             </a>
                         </div>
@@ -132,11 +130,11 @@
                 <div class="header__border-top-right is-wide"></div>
                 <div class="header__border-bottom-left is-wide"></div>
                 <div class="header__border-bottom-right is-wide"></div>
-                <a class="ir button header__cta" href="/landing">
+                <a class="ir button header__cta" href="/">
                     Button logo
                     <div class="logo header__cta-logo is-wide">
-                        <img class="logo__part" src="assets/images/logo.svg" />
-
+                        <img class="logo__part" src="/assets/img/logo-back.png" alt="Logo Dunderville"/>
+                        <img class="logo__part" src="/assets/img/logo-front.png" alt="Logo Dunderville"/>
                     </div>
                 </a>
                 <div class="header__copy is-narrow">
@@ -161,7 +159,7 @@
                         </a>
                     </li>
                     <li class="list-routes__item">
-                        <a class="button button-route " href="/wearhistory">
+                        <a class="button button-route " href="/process">
                             <div class="button-route__order">III
                             <!-- -->
                             .</div>
@@ -177,7 +175,7 @@
                         </a>
                     </li>
                 </ul>
-                <button class="ir button button-menu is-narrow ">
+                    <button class="ir button button-menu is-narrow ">
                     Menu<div class="button-menu__main"></div>
                     <div class="button-menu__icon">
                         <svg viewBox="0 0 29 20">
@@ -186,6 +184,6 @@
                     </div>
                 </button>
             </header>
-        </div>
+        </div>       
     </body>
 </html>

@@ -73,6 +73,27 @@ apiRouter.get("/chatbot",(req,res)=>{
   })
 
 })
+
+apiRouter.get("/avatar",(req,res)=>{
+  let outfit = req.query.outfit as string;
+  console.log(outfit);
+  let proc = spawn("python", ["../AI/hope.py", outfit]);
+  // proc.stdout.on('data',(data: Buffer)=>{
+  //   res.setHeader('content-type', 'image/png');
+  //   res.send(data.toString());
+  // })
+  let image : Buffer = Buffer.alloc(0);
+  proc.stdout.on('data',(data: Buffer)=>{
+    image = Buffer.concat([image,data]);
+  })
+
+  proc.on("close",(code, signal)=>{
+    // res.setHeader('content-type', 'image/png');
+    res.end(image, 'binary');
+  })
+
+
+})
 // ** Add UserRouter ** //
 
 // Init router

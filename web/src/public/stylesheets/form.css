@@ -408,7 +408,7 @@ body,html {
 }
 
 .is-inverted .button-menu:before {
-    background-color: #cec6bb
+    background-color: #e6e2dd;
 }
 
 .is-open .button-menu:before {
@@ -416,7 +416,7 @@ body,html {
 }
 
 .is-inverted.is-open .button-menu:before {
-    background-color: #cec6bb
+    background-color: #e6e2dd;
 }
 
 .button-menu__main {
@@ -427,7 +427,7 @@ body,html {
 }
 
 .is-inverted .button-menu__main {
-    background-color: #e6e2dd
+    background-color: #e6e2dd;
 }
 
 .is-open .button-menu__main {
@@ -1468,7 +1468,7 @@ body,html {
 }
 
 .page-contact .footer {
-    background-color: #cfd3d1
+    background-color: #e6e2dd;
 }
 
 .footer__block {
@@ -2202,7 +2202,7 @@ body,html {
     top: -.75rem;
     left: 1.125rem;
     padding: 0 .5rem;
-    background-color: #cfd3d1;
+    background-color: #e6e2dd;
     font-family: GTPressuraMono,sans-serif;
     font-weight: 400;
     font-size: .6875rem;
@@ -4132,7 +4132,7 @@ body,html {
 }
 
 .page-contact {
-    background-color: #cfd3d1
+    background-color: #e6e2dd;
 }
 
 .page-contact__subtitle {
