@@ -60,3 +60,31 @@ function increaseChatWindowSize() {
   chatWindow.style.transform = "scale(1.60)"; // Scale the chat window
   chatWindow.style.transformOrigin = "bottom right"; // Scale from bottom right
 }
+
+function handleClick(s){
+  result = document.getElementById("the_stuff");
+  console.log(JSON.stringify(result))
+  if(s == 'card1')
+  result.innerHTML = `
+                      <button class="card">
+                        <img src="overlayed_avatar_green.png"" alt="Image result">
+                        <p>Result</p>
+                    </button>
+`;
+  else if (s == 'card2')
+    result.innerHTML = `
+                          <button class="card">
+                        <img src="overlayed_avatar_red.png"" alt="Image result">
+                        <p>Result</p>
+                    </button>
+
+`;
+  else
+    result.innerHTML=`
+                              <button class="card">
+                        <img src="overlayed_avatar_dress.png"" alt="Image result">
+                        <p>Result</p>
+                    </button>
+
+`
+}
