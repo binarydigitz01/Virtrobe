@@ -1,19 +1,18 @@
 import os
-import streamlit as st
 from PIL import Image
 import google.generativeai as genai
 from fuzzywuzzy import process
 
 # Configure the Gemini API
-genai.configure(api_key="AIzaSyDN*********************************") 
+genai.configure(api_key="AIzaSyDNaki4Nif7hnhTJsvJsHQqu7-lkCTXHAY")
 
 # Define the base directory where images are stored
-base_dir = r"C:\Users\NAMAN MAHESHWARI\Desktop\M#\New folder"
+base_dir = os.path.abspath("../Collection")
 
 # Possible keyword categories
-genders = ["male", "female", "specially abled"]
-wear_types = ["formals", "casual"]
-colors = ["black", "red"]
+genders = ["Men", "Women"]
+wear_types = ["Formal", "Casual", "Party", "Winter", "Summer"]
+colors = ["black", "red", "green", "grey", "blue", "white"]
 
 # Function to extract keywords using Gemini API
 def extract_keywords_from_gemini(user_input):
@@ -35,7 +34,7 @@ def extract_keywords_from_gemini(user_input):
     prompt = (
         "Go through this user prompt, and give me a string of keywords that belong "
         "to my list. Convert words outside my list that are similar to words in my "
-        "list. My list includes {male, female, specially abled, formals, casual, black, red}. "
+        "list. My list includes {Men, Women, formals, casual, party, winter, summer, black, red, green, grey, blue, white}. "
         "Just give me a list of keywords and nothing else. "
         f"User prompt --- {user_input}"
     )
@@ -62,46 +61,51 @@ def get_keywords_from_gemini(gemini_keywords):
             wear_type = find_best_match(keyword, wear_types)
         if not color:
             color = find_best_match(keyword, colors)
-
     return gender, wear_type, color
 
 # Function to generate folder path
 def get_image_path(gender, wear_type, color):
-    folder_path = os.path.join(base_dir, gender, wear_type, color)
-    return folder_path
+    folder_path = os.path.join(gender, wear_type, color)
+    folder_paths = [os.path.join(folder_path,i) for i in os.listdir(os.path.abspath(os.path.join(os.curdir,'../Collection/',folder_path)))]
+    return folder_paths
 
 # Function to display images from the folder
-def display_images(folder_path):
-    if os.path.exists(folder_path):
-        image_files = [f for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
-        if image_files:
-            for img_file in image_files:
-                img_path = os.path.join(folder_path, img_file)
-                img = Image.open(img_path)
-                st.image(img, caption=img_file, use_column_width=True)
-        else:
-            st.write("No images found in this folder.")
-    else:
-        st.write("Folder not found.")
+# def display_images(folder_path):
+#     if os.path.exists(folder_path):
+#         image_files = [f for f in os.listdir(folder_path) if f.endswith(('.png', '.jpg', '.jpeg'))]
+#         if image_files:
+#             for img_file in image_files:
+#                 img_path = os.path.join(folder_path, img_file)
+#                 img = Image.open(img_path)
+#                 # st.image(img, caption=img_file, use_column_width=True)
+#         else:
+#             st.write("No images found in this folder.")
+#     else:
+#         st.write("Folder not found.")
 
-# Streamlit app interface
-st.title("Clothing Image Finder Chatbot")
+
 
 # Chat input
-user_input = st.text_input("Ask for images (e.g., 'Show male formals in black'):")
+# user_input = st.text_input("Ask for images (e.g., 'Show male formals in black'):")
+user_input = input()
 
 # Process user input and extract keywords using Gemini API
 if user_input:
     gemini_keywords = extract_keywords_from_gemini(user_input)
     gender, wear_type, color = get_keywords_from_gemini(gemini_keywords)
 
-    # If gender is not specified, ask the user to provide it
     if not gender:
-        gender = st.selectbox("Please specify your gender:", options=genders)
+        import sys
+        args = sys.argv
+        if not gender:
+            if "male" in args:
+                gender = "Men"
+            else:
+                gender = "Women"
+
 
     if wear_type and color:
-        folder_path = get_image_path(gender, wear_type, color)
-        st.write(f"Displaying images from: {folder_path}")
-        display_images(folder_path)
+        folder_paths = get_image_path(gender, wear_type, color)
+        print("\n".join(folder_paths),end="")
     else:
-        st.write("Could not understand your query. Please make sure to mention wear type and color.")
+        print("Could not understand your query. Please make sure to mention wear type and color.")
