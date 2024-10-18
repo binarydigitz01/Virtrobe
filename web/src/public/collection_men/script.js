@@ -39,16 +39,14 @@ async function sendMessage() {
   botResponse.className = "message bot-message";
   const botImage = document.createElement("img");
   botImage.src = "/" + images[0]; // Replace with any image link.
-  console.log(botImage.src);
   botImage.alt = "Bot Response";
   botImage.className = "bot-image";
   botResponse.appendChild(botImage);
   chatOutput.appendChild(botResponse);
 
-  const new_resp = document.getElementById("div");
+  const new_resp = document.createElement("div");
   const avatarImage = document.createElement("img");
   avatarImage.src = "/api/avatar?"+ new URLSearchParams({outfit:"/"+images[0]});
-  console.log(avatarImage.src);
   avatarImage.className = "bot-image";
   new_resp.appendChild(avatarImage);
   chatOutput.appendChild(new_resp);
