@@ -113,7 +113,7 @@ response = requests.post(
     'https://api.remove.bg/v1.0/removebg',
     files={'image_file': open(cloth_image_path, 'rb')},
     data={'size': 'auto'},
-    headers={'X-Api-Key': 'eDbxh3B7kJvTbtosVewfCBYb'},
+    headers={'X-Api-Key': 'HJFXHEQJxi2vL6F35TLoRAAR'},
 )
 
 if response.status_code == requests.codes.ok:

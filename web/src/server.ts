@@ -71,9 +71,9 @@ const staticDir = path.join(__dirname, 'public');
 app.use('/',express.static(staticDir));
 
 // Nav to users pg by default
-// app.get('/', (_: Request, res: Response) => {
-//   return res.redirect('/users');
-// });
+app.get('/', (_: Request, res: Response) => {
+  return res.redirect('/landing');
+});
 
 // Redirect to login if not logged in.
 // app.get('/users', (_: Request, res: Response) => {

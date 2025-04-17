@@ -8,7 +8,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.manipalhash.virtrobe.ui.register.UserModel;}
+import com.manipalhash.virtrobe.ui.register.UserModel;
 
 public class RegisterAPI {
     public final String URL = BaseAPI.API_ENDPOINT + "/api/register";
